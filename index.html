@@ -1,1021 +1,1523 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Sulaimon Tunde Olamilekan | Data Analyst</title>
-
-  <meta name="description" content="Sulaimon Tunde Olamilekan is a Data Analyst specialising in Excel, Power BI, business data analysis, sales, inventory, profitability and reporting.">
-
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
-
-    :root {
-      --bg: #07111f;
-      --bg2: #0b1728;
-      --card: #101f33;
-      --card2: #13253c;
-      --text: #f8fafc;
-      --muted: #9fb0c5;
-      --accent: #38bdf8;
-      --accent2: #22d3ee;
-      --border: rgba(255,255,255,0.08);
-      --white: #ffffff;
-    }
-
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.7;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    img {
-      max-width: 100%;
-      display: block;
-    }
-
-    .container {
-      width: 90%;
-      max-width: 1150px;
-      margin: auto;
-    }
-
-    /* NAVIGATION */
-
-    header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      z-index: 1000;
-      background: rgba(7,17,31,0.92);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border);
-    }
-
-    nav {
-      min-height: 75px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .logo {
-      font-size: 1.4rem;
-      font-weight: 800;
-      color: var(--accent);
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 24px;
-      list-style: none;
-    }
-
-    .nav-links a {
-      color: var(--muted);
-      font-size: 0.95rem;
-      transition: 0.3s;
-    }
-
-    .nav-links a:hover {
-      color: var(--accent);
-    }
-
-    /* GENERAL */
-
-    section {
-      padding: 100px 0;
-    }
-
-    .section-title {
-      text-align: center;
-      margin-bottom: 55px;
-    }
-
-    .section-title span {
-      color: var(--accent);
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      font-size: 0.8rem;
-      font-weight: bold;
-    }
-
-    .section-title h2 {
-      font-size: 2.3rem;
-      margin-top: 8px;
-    }
-
-    .section-title p {
-      color: var(--muted);
-      max-width: 700px;
-      margin: 12px auto 0;
-    }
-
-    /* HERO */
-
-    #home {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      padding-top: 120px;
-      background:
-        radial-gradient(circle at 80% 20%, rgba(56,189,248,0.12), transparent 35%),
-        radial-gradient(circle at 10% 80%, rgba(34,211,238,0.08), transparent 30%);
-    }
-
-    .hero {
-      display: grid;
-      grid-template-columns: 1.4fr 0.8fr;
-      gap: 70px;
-      align-items: center;
-    }
-
-    .hero-small {
-      color: var(--accent);
-      font-size: 0.9rem;
-      font-weight: bold;
-      letter-spacing: 3px;
-      margin-bottom: 15px;
-    }
-
-    .hero h1 {
-      font-size: clamp(2.5rem, 6vw, 5rem);
-      line-height: 1.05;
-      margin-bottom: 12px;
-    }
-
-    .hero h2 {
-      font-size: 1.7rem;
-      color: var(--accent);
-      margin-bottom: 20px;
-    }
-
-    .hero-tagline {
-      font-size: 1.4rem;
-      font-weight: 600;
-      margin-bottom: 18px;
-    }
-
-    .hero-description {
-      color: var(--muted);
-      max-width: 700px;
-      font-size: 1.05rem;
-    }
-
-    .buttons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 15px;
-      margin-top: 30px;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 13px 22px;
-      border-radius: 8px;
-      font-weight: bold;
-      border: 1px solid var(--accent);
-      transition: 0.3s;
-    }
-
-    .btn-primary {
-      background: var(--accent);
-      color: #06101c;
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-3px);
-      background: var(--accent2);
-    }
-
-    .btn-outline {
-      color: var(--accent);
-    }
-
-    .btn-outline:hover {
-      background: rgba(56,189,248,0.1);
-      transform: translateY(-3px);
-    }
-
-    .socials {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      margin-top: 25px;
-    }
-
-    .socials a {
-      color: var(--muted);
-      transition: 0.3s;
-    }
-
-    .socials a:hover {
-      color: var(--accent);
-    }
-
-    /* PROFILE PHOTO */
-
-    .profile-wrapper {
-      display: flex;
-      justify-content: center;
-    }
-
-    .profile-frame {
-      width: 330px;
-      height: 400px;
-      border-radius: 25px;
-      background: linear-gradient(145deg, var(--card2), var(--card));
-      border: 1px solid var(--border);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 12px;
-      box-shadow: 0 20px 60px rgba(0,0,0,0.35);
-      overflow: hidden;
-    }
-
-    .profile-placeholder {
-      width: 100%;
-      height: 100%;
-      border-radius: 18px;
-      border: 2px dashed rgba(56,189,248,0.35);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      color: var(--muted);
-      padding: 30px;
-    }
-
-    .profile-placeholder strong {
-      color: var(--accent);
-      display: block;
-      font-size: 1.1rem;
-      margin-bottom: 8px;
-    }
-
-    .profile-photo {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: 18px;
-    }
-
-    /* HIGHLIGHTS */
-
-    .highlights {
-      display: grid;
-      grid-template-columns: repeat(4,1fr);
-      gap: 18px;
-      margin-top: 60px;
-    }
-
-    .highlight {
-      background: var(--card);
-      border: 1px solid var(--border);
-      padding: 25px;
-      border-radius: 15px;
-      text-align: center;
-    }
-
-    .highlight h3 {
-      color: var(--accent);
-      margin-bottom: 5px;
-    }
-
-    .highlight p {
-      color: var(--muted);
-      font-size: 0.9rem;
-    }
-
-    /* ABOUT */
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1.3fr 0.7fr;
-      gap: 45px;
-    }
-
-    .about-text p {
-      color: var(--muted);
-      margin-bottom: 18px;
-    }
-
-    .about-list {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      padding: 30px;
-    }
-
-    .about-list h3 {
-      margin-bottom: 20px;
-      color: var(--accent);
-    }
-
-    .about-list li {
-      list-style: none;
-      margin-bottom: 12px;
-      color: var(--muted);
-    }
-
-    .about-list li::before {
-      content: "✓";
-      color: var(--accent);
-      margin-right: 10px;
-    }
-
-    /* SERVICES */
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(3,1fr);
-      gap: 22px;
-    }
-
-    .card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      padding: 30px;
-      transition: 0.3s;
-    }
-
-    .card:hover {
-      transform: translateY(-6px);
-      border-color: rgba(56,189,248,0.35);
-    }
-
-    .card-icon {
-      width: 48px;
-      height: 48px;
-      border-radius: 12px;
-      background: rgba(56,189,248,0.12);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--accent);
-      font-weight: bold;
-      margin-bottom: 20px;
-    }
-
-    .card h3 {
-      margin-bottom: 10px;
-    }
-
-    .card p {
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
-
-    /* SKILLS */
-
-    .skills-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 25px;
-    }
-
-    .skill-box {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      padding: 30px;
-    }
-
-    .skill-box h3 {
-      color: var(--accent);
-      margin-bottom: 20px;
-    }
-
-    .skill {
-      margin-bottom: 20px;
-    }
-
-    .skill-header {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 7px;
-    }
-
-    .skill-header span:last-child {
-      color: var(--accent);
-      font-size: 0.85rem;
-    }
-
-    .skill-bar {
-      height: 8px;
-      background: #1c3048;
-      border-radius: 10px;
-      overflow: hidden;
-    }
-
-    .skill-fill {
-      height: 100%;
-      background: linear-gradient(90deg, var(--accent), var(--accent2));
-      border-radius: 10px;
-    }
-
-    .tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .tag {
-      background: var(--card2);
-      color: var(--muted);
-      border: 1px solid var(--border);
-      padding: 8px 12px;
-      border-radius: 20px;
-      font-size: 0.85rem;
-    }
-
-    /* PROJECTS */
-
-    #projects {
-      background: var(--bg2);
-    }
-
-    .project-card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      overflow: hidden;
-      transition: 0.3s;
-    }
-
-    .project-card:hover {
-      transform: translateY(-7px);
-      border-color: rgba(56,189,248,0.4);
-    }
-
-    .project-top {
-      height: 170px;
-      background:
-        linear-gradient(135deg, rgba(56,189,248,0.15), rgba(34,211,238,0.03));
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--accent);
-      font-size: 1.5rem;
-      font-weight: bold;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .project-content {
-      padding: 28px;
-    }
-
-    .project-number {
-      color: var(--accent);
-      font-size: 0.8rem;
-      font-weight: bold;
-    }
-
-    .project-content h3 {
-      margin: 5px 0 10px;
-      font-size: 1.35rem;
-    }
-
-    .project-content h4 {
-      color: var(--muted);
-      font-size: 0.9rem;
-      margin-bottom: 15px;
-    }
-
-    .project-content p {
-      color: var(--muted);
-      font-size: 0.94rem;
-      margin-bottom: 20px;
-    }
-
-    .project-content ul {
-      margin: 0 0 20px 20px;
-      color: var(--muted);
-      font-size: 0.9rem;
-    }
-
-    .project-content li {
-      margin-bottom: 5px;
-    }
-
-    .project-link {
-      display: inline-block;
-      margin-top: 20px;
-      color: var(--accent);
-      font-weight: bold;
-    }
-
-    /* BUSINESS VALUE */
-
-    .questions {
-      display: grid;
-      grid-template-columns: repeat(3,1fr);
-      gap: 18px;
-    }
-
-    .question {
-      background: var(--card);
-      border: 1px solid var(--border);
-      padding: 22px;
-      border-radius: 14px;
-      color: var(--muted);
-    }
-
-    .question strong {
-      color: var(--text);
-      display: block;
-      margin-bottom: 5px;
-    }
-
-    /* EDUCATION */
-
-    .timeline {
-      max-width: 850px;
-      margin: auto;
-    }
-
-    .timeline-card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-left: 4px solid var(--accent);
-      border-radius: 14px;
-      padding: 30px;
-    }
-
-    .timeline-card span {
-      color: var(--accent);
-      font-weight: bold;
-    }
-
-    .timeline-card p {
-      color: var(--muted);
-      margin-top: 5px;
-    }
-
-    /* CERTIFICATES */
-
-    #certificates {
-      background: var(--bg2);
-    }
-
-    .certificate-card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      padding: 28px;
-      transition: 0.3s;
-    }
-
-    .certificate-card:hover {
-      transform: translateY(-5px);
-      border-color: rgba(56,189,248,0.4);
-    }
-
-    .certificate-card h3 {
-      margin-bottom: 10px;
-    }
-
-    .certificate-card p {
-      color: var(--muted);
-      font-size: 0.9rem;
-    }
-
-    .certificate-btn {
-      display: inline-block;
-      margin-top: 18px;
-      color: var(--accent);
-      font-weight: bold;
-    }
-
-    /* EXPERIENCE */
-
-    .experience-card {
-      max-width: 900px;
-      margin: 0 auto 25px;
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      padding: 35px;
-    }
-
-    .experience-card h3 {
-      font-size: 1.4rem;
-    }
-
-    .experience-card .role {
-      color: var(--accent);
-      margin: 5px 0 15px;
-      font-weight: bold;
-    }
-
-    .experience-card p {
-      color: var(--muted);
-      margin-bottom: 18px;
-    }
-
-    .experience-card ul {
-      margin-left: 20px;
-      color: var(--muted);
-    }
-
-    .experience-card li {
-      margin-bottom: 8px;
-    }
-
-    /* CTA */
-
-    .cta {
-      text-align: center;
-      background:
-        linear-gradient(135deg, rgba(56,189,248,0.12), rgba(34,211,238,0.04));
-      border: 1px solid var(--border);
-      border-radius: 25px;
-      padding: 65px 30px;
-    }
-
-    .cta h2 {
-      font-size: 2.4rem;
-      margin-bottom: 15px;
-    }
-
-    .cta p {
-      color: var(--muted);
-      max-width: 700px;
-      margin: 0 auto 25px;
-    }
-
-    /* CONTACT */
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 0.8fr 1.2fr;
-      gap: 30px;
-    }
-
-    .contact-info,
-    .contact-form {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      padding: 30px;
-    }
-
-    .contact-info h3 {
-      color: var(--accent);
-      margin-bottom: 20px;
-    }
-
-    .contact-item {
-      margin-bottom: 20px;
-    }
-
-    .contact-item span {
-      display: block;
-      color: var(--muted);
-      font-size: 0.85rem;
-    }
-
-    .contact-item a {
-      color: var(--text);
-    }
-
-    .contact-item a:hover {
-      color: var(--accent);
-    }
-
-    form {
-      display: grid;
-      gap: 15px;
-    }
-
-    input,
-    textarea {
-      width: 100%;
-      padding: 14px;
-      background: #09182a;
-      color: var(--text);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      outline: none;
-      font-family: inherit;
-    }
-
-    input:focus,
-    textarea:focus {
-      border-color: var(--accent);
-    }
-
-    textarea {
-      min-height: 150px;
-      resize: vertical;
-    }
-
-    button {
-      border: none;
-      cursor: pointer;
-      font-family: inherit;
-      font-size: 1rem;
-    }
-
-    /* FOOTER */
-
-    footer {
-      border-top: 1px solid var(--border);
-      padding: 35px 0;
-      text-align: center;
-      color: var(--muted);
-      font-size: 0.9rem;
-    }
-
-    footer strong {
-      color: var(--accent);
-    }
-
-    /* RESPONSIVE */
-
-    @media (max-width: 900px) {
-      .hero,
-      .about-grid,
-      .contact-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .hero {
-        text-align: center;
-      }
-
-      .hero-description {
-        margin: auto;
-      }
-
-      .buttons,
-      .socials {
-        justify-content: center;
-      }
-
-      .profile-wrapper {
-        order: -1;
-      }
-
-      .highlights {
-        grid-template-columns: repeat(2,1fr);
-      }
-
-      .cards {
-        grid-template-columns: repeat(2,1fr);
-      }
-
-      .questions {
-        grid-template-columns: repeat(2,1fr);
-      }
-
-      .skills-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 650px) {
-      .nav-links {
-        display: none;
-      }
-
-      section {
-        padding: 75px 0;
-      }
-
-      .hero h1 {
-        font-size: 2.7rem;
-      }
-
-      .hero h2 {
-        font-size: 1.4rem;
-      }
-
-      .hero-tagline {
-        font-size: 1.15rem;
-      }
-
-      .profile-frame {
-        width: 280px;
-        height: 340px;
-      }
-
-      .highlights,
-      .cards,
-      .questions {
-        grid-template-columns: 1fr;
-      }
-
-      .section-title h2 {
-        font-size: 1.9rem;
-      }
-
-      .cta h2 {
-        font-size: 1.9rem;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sulaimon Tunde Olamilekan | Data Analyst</title>
+
+    <meta name="description" content="Sulaimon Tunde Olamilekan is a Data Analyst helping businesses turn data into insights for better decisions.">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #07111f;
+            color: #f8fafc;
+            line-height: 1.7;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1150px;
+            margin: auto;
+        }
+
+        /* NAVIGATION */
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(7, 17, 31, 0.95);
+            border-bottom: 1px solid #1e334d;
+        }
+
+        nav {
+            min-height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+            color: #38bdf8;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 22px;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            color: #cbd5e1;
+            font-size: 14px;
+        }
+
+        .nav-links a:hover {
+            color: #38bdf8;
+        }
+
+        /* GENERAL */
+
+        section {
+            padding: 90px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-title h2 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: #9fb0c5;
+        }
+
+        .accent {
+            color: #38bdf8;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 13px 23px;
+            border-radius: 7px;
+            font-weight: bold;
+            margin: 8px 6px 8px 0;
+            transition: 0.3s;
+        }
+
+        .btn-primary {
+            background: #38bdf8;
+            color: #07111f;
+        }
+
+        .btn-primary:hover {
+            background: #22d3ee;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            border: 1px solid #38bdf8;
+            color: #38bdf8;
+        }
+
+        .btn-outline:hover {
+            background: #38bdf8;
+            color: #07111f;
+        }
+
+        /* HERO */
+
+        #home {
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero {
+            display: grid;
+            grid-template-columns: 1.4fr 0.8fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-small {
+            color: #38bdf8;
+            font-weight: bold;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 {
+            font-size: 55px;
+            line-height: 1.1;
+            margin-bottom: 15px;
+        }
+
+        .hero h2 {
+            font-size: 28px;
+            color: #38bdf8;
+            margin-bottom: 15px;
+        }
+
+        .hero h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #e2e8f0;
+        }
+
+        .hero p {
+            color: #b6c4d5;
+            max-width: 700px;
+            font-size: 17px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            color: #38bdf8;
+            border-bottom: 1px solid transparent;
+        }
+
+        .social-links a:hover {
+            border-bottom-color: #38bdf8;
+        }
+
+        .profile-box {
+            display: flex;
+            justify-content: center;
+        }
+
+        .profile-placeholder {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            border: 5px solid #38bdf8;
+            background: #10243a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #9fb0c5;
+            padding: 30px;
+        }
+
+        /* HIGHLIGHTS */
+
+        .highlights {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .highlight {
+            background: #101f33;
+            border: 1px solid #1e334d;
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .highlight h3 {
+            color: #38bdf8;
+            margin-bottom: 5px;
+        }
+
+        .highlight p {
+            color: #9fb0c5;
+        }
+
+        /* ABOUT */
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .about-card {
+            background: #101f33;
+            border: 1px solid #1e334d;
+            padding: 30px;
+            border-radius: 10px;
+        }
+
+        .about-card h3 {
+            margin-bottom: 15px;
+            color: #38bdf8;
+        }
+
+        .about-card p {
+            color: #b6c4d5;
+        }
+
+        /* SERVICES */
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .card {
+            background: #101f33;
+            border: 1px solid #1e334d;
+            padding: 28px;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: #38bdf8;
+        }
+
+        .card h3 {
+            color: #38bdf8;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            color: #b6c4d5;
+        }
+
+        /* PROJECTS */
+
+        .project-card {
+            background: #101f33;
+            border: 1px solid #1e334d;
+            border-radius: 12px;
+            padding: 30px;
+        }
+
+        .project-card + .project-card {
+            margin-top: 25px;
+        }
+
+        .project-card h3 {
+            font-size: 24px;
+            color: #38bdf8;
+            margin-bottom: 8px;
+        }
+
+        .project-tools {
+            color: #94a3b8;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .project-card p {
+            color: #c1cedc;
+        }
+
+        .project-list {
+            margin: 15px 0 0 20px;
+            color: #c1cedc;
+        }
+
+        /* SKILLS */
+
+        .skill-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .skill-card {
+            background: #101f33;
+            border: 1px solid #1e334d;
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .skill-card h3 {
+            color: #38bdf8;
+            margin-bottom: 8px;
+        }
+
+        .skill-card p {
+            color: #b6c4d5;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .skill-tag {
+            padding: 8px 14px;
+            background: #13253c;
+            border: 1px solid #28435f;
+            border-radius: 20px;
+            color: #cbd5e1;
+            font-size: 14px;
+        }
+
+        /* EDUCATION */
+
+        .timeline-card {
+            background: #101f33;
+            border-left: 4px solid #38bdf8;
+            padding: 25px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .timeline-card h3 {
+            color: #38bdf8;
+            margin-bottom: 8px;
+        }
+
+        .timeline-card .date {
+            color: #94a3b8;
+            margin-bottom: 10px;
+        }
+
+        .timeline-card p {
+            color: #c1cedc;
+        }
+
+        /* CERTIFICATES */
+
+        .certificate-card {
+            background: #101f33;
+            border: 1px solid #1e334d;
+            border-radius: 10px;
+            padding: 25px;
+        }
+
+        .certificate-card h3 {
+            color: #38bdf8;
+            margin-bottom: 8px;
+        }
+
+        .certificate-card p {
+            color: #b6c4d5;
+        }
+
+        /* EXPERIENCE */
+
+        .experience-card {
+            background: #101f33;
+            border: 1px solid #1e334d;
+            border-radius: 10px;
+            padding: 30px;
+        }
+
+        .experience-card h3 {
+            font-size: 25px;
+            color: #38bdf8;
+        }
+
+        .experience-card h4 {
+            color: #e2e8f0;
+            margin: 5px 0 15px;
+        }
+
+        .experience-card p,
+        .experience-card li {
+            color: #c1cedc;
+        }
+
+        .experience-card ul {
+            margin-left: 20px;
+        }
+
+        /* BUSINESS VALUE */
+
+        .questions {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .question {
+            background: #101f33;
+            border: 1px solid #1e334d;
+            padding: 18px;
+            border-radius: 8px;
+            color: #cbd5e1;
+        }
+
+        .question::before {
+            content: "✓ ";
+            color: #38bdf8;
+            font-weight: bold;
+        }
+
+        /* CONTACT */
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
+            gap: 35px;
+        }
+
+        .contact-info,
+        .contact-form {
+            background: #101f33;
+            border: 1px solid #1e334d;
+            padding: 30px;
+            border-radius: 10px;
+        }
+
+        .contact-item {
+            margin-bottom: 20px;
+        }
+
+        .contact-item strong {
+            display: block;
+            color: #38bdf8;
+            margin-bottom: 3px;
+        }
+
+        .contact-item span,
+        .contact-item a {
+            color: #c1cedc;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 7px;
+            color: #cbd5e1;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 13px;
+            background: #07111f;
+            border: 1px solid #29435f;
+            color: white;
+            border-radius: 6px;
+            outline: none;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: #38bdf8;
+        }
+
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        /* CTA */
+
+        .cta {
+            text-align: center;
+            background: #0b1728;
+            border-top: 1px solid #1e334d;
+            border-bottom: 1px solid #1e334d;
+        }
+
+        .cta h2 {
+            font-size: 38px;
+            margin-bottom: 12px;
+        }
+
+        .cta p {
+            color: #b6c4d5;
+            margin-bottom: 15px;
+        }
+
+        /* FOOTER */
+
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            color: #7f91a7;
+            border-top: 1px solid #1e334d;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 900px) {
+
+            .hero,
+            .about-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .highlights,
+            .skill-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .cards {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .profile-box {
+                order: -1;
+            }
+
+            .hero {
+                text-align: center;
+            }
+
+            .social-links {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 650px) {
+
+            .nav-links {
+                gap: 10px;
+                justify-content: center;
+            }
+
+            nav {
+                flex-direction: column;
+                padding: 15px 0;
+                gap: 10px;
+            }
+
+            .hero h1 {
+                font-size: 38px;
+            }
+
+            .hero h2 {
+                font-size: 24px;
+            }
+
+            .hero h3 {
+                font-size: 20px;
+            }
+
+            .section-title h2 {
+                font-size: 30px;
+            }
+
+            .highlights,
+            .skill-grid,
+            .cards,
+            .questions {
+                grid-template-columns: 1fr;
+            }
+
+            .profile-placeholder {
+                width: 230px;
+                height: 230px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-  <!-- NAVIGATION -->
-  <header>
-    <div class="container">
-      <nav>
-        <a href="#home" class="logo">Tunde.</a>
+<!-- ================= NAVIGATION ================= -->
 
-        <ul class="nav-links">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#education">Education</a></li>
-          <li><a href="#certificates">Certificates</a></li>
-          <li><a href="#experience">Experience</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
+<header>
+    <div class="container">
+        <nav>
+            <a href="#home" class="logo">Tunde.</a>
+
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#certificates">Certificates</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
     </div>
-  </header>
+</header>
 
 
-  <!-- HERO -->
-  <section id="home">
+<!-- ================= HOME ================= -->
+
+<section id="home">
     <div class="container">
-      <div class="hero">
+        <div class="hero">
 
-        <div>
-          <div class="hero-small">HELLO, I'M</div>
+            <div>
+                <div class="hero-small">HELLO, I'M</div>
 
-          <h1>Sulaimon Tunde Olamilekan</h1>
+                <h1>Sulaimon Tunde Olamilekan</h1>
 
-          <h2>Data Analyst</h2>
+                <h2>Data Analyst</h2>
 
-          <div class="hero-tagline">
-            Turning Data into Insights That Drive Better Decisions
-          </div>
+                <h3>Turning Data into Insights That Drive Better Decisions</h3>
 
-          <p class="hero-description">
-            I help businesses transform raw data into meaningful insights
-            across sales, inventory, profitability, expenses and overall
-            business performance.
-          </p>
+                <p>
+                    I help businesses transform raw data into meaningful insights
+                    across sales, inventory, profitability, expenses and overall
+                    business performance.
+                </p>
 
-          <div class="buttons">
-            <a href="#projects" class="btn btn-primary">
-              View My Projects
-            </a>
+                <div>
+                    <a href="#projects" class="btn btn-primary">
+                        View My Projects
+                    </a>
 
-            <a href="#contact" class="btn btn-outline">
-              Let's Work Together
-            </a>
-          </div>
+                    <a href="#contact" class="btn btn-outline">
+                        Let's Work Together
+                    </a>
+                </div>
 
-          <div class="socials">
-            <a href="https://www.linkedin.com/in/tunde-sulaimon-3b8236315"
-               target="_blank">
-              LinkedIn
-            </a>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/tunde-sulaimon-3b8236315" target="_blank">
+                        LinkedIn
+                    </a>
 
-            <a href="https://github.com/tundesulaimon50-wq"
-               target="_blank">
-              GitHub
-            </a>
+                    <a href="https://github.com/tundesulaimon50-wq" target="_blank">
+                        GitHub
+                    </a>
 
-            <a href="mailto:tundesulaimon50@gmail.com">
-              Email
-            </a>
+                    <a href="mailto:tundesulaimon50@gmail.com">
+                        Email
+                    </a>
 
-            <a href="https://wa.me/2349120475646"
-               target="_blank">
-              WhatsApp
-            </a>
-          </div>
-        </div>
-
-
-        <!-- PROFILE PHOTO -->
-        <div class="profile-wrapper">
-          <div class="profile-frame">
-
-            <!--
-              WHEN YOU HAVE YOUR PHOTO:
-              Upload it to an "assets" folder in GitHub
-              and replace this entire div with:
-
-              <img src="assets/profile.jpg"
-                   alt="Sulaimon Tunde Olamilekan - Data Analyst"
-                   class="profile-photo">
-            -->
-
-            <div class="profile-placeholder">
-              <div>
-                <strong>Your Profile Photo</strong>
-                <p>Your professional picture will appear here.</p>
-              </div>
+                    <a href="https://wa.me/2349120475646" target="_blank">
+                        WhatsApp
+                    </a>
+                </div>
             </div>
 
-          </div>
+            <div class="profile-box">
+                <div class="profile-placeholder">
+                    <div>
+                        <strong>Your Profile Photo</strong>
+                        <br><br>
+                        Replace this area with your professional photo.
+                    </div>
+                </div>
+            </div>
+
         </div>
+    </div>
+</section>
 
-      </div>
 
+<!-- ================= HIGHLIGHTS ================= -->
 
-      <!-- QUICK HIGHLIGHTS -->
-      <div class="highlights">
+<section>
+    <div class="container">
 
-        <div class="highlight">
-          <h3>Excel</h3>
-          <p>Business Analysis & Solutions</p>
+        <div class="highlights">
+
+            <div class="highlight">
+                <h3>Excel</h3>
+                <p>Business Analysis</p>
+            </div>
+
+            <div class="highlight">
+                <h3>Power BI</h3>
+                <p>Data Visualization</p>
+            </div>
+
+            <div class="highlight">
+                <h3>Business</h3>
+                <p>Performance Insights</p>
+            </div>
+
+            <div class="highlight">
+                <h3>Data</h3>
+                <p>Better Decisions</p>
+            </div>
+
         </div>
-
-        <div class="highlight">
-          <h3>Power BI</h3>
-          <p>Interactive Dashboards</p>
-        </div>
-
-        <div class="highlight">
-          <h3>Business</h3>
-          <p>Data-Driven Decision Making</p>
-        </div>
-
-        <div class="highlight">
-          <h3>Data</h3>
-          <p>Insights & Reporting</p>
-        </div>
-
-      </div>
 
     </div>
-  </section>
+</section>
 
 
-  <!-- ABOUT -->
-  <section id="about">
+<!-- ================= ABOUT ================= -->
+
+<section id="about">
+    <div class="container">
+
+        <div class="section-title">
+            <h2>About <span class="accent">Me</span></h2>
+            <p>Data analysis with practical business understanding.</p>
+        </div>
+
+        <div class="about-grid">
+
+            <div class="about-card">
+
+                <h3>Who I Am</h3>
+
+                <p>
+                    I am a Data Analyst with practical experience working with
+                    business data, reports, sales records, inventory information
+                    and financial/operational records.
+                </p>
+
+                <br>
+
+                <p>
+                    My interest is in using data to understand what is happening
+                    inside a business and turning that information into useful
+                    insights that support better decisions.
+                </p>
+
+            </div>
+
+
+            <div class="about-card">
+
+                <h3>What I Bring</h3>
+
+                <p>
+                    My background in internal auditing gives me an additional
+                    perspective when working with data because I pay attention
+                    to accuracy, reconciliation, documentation and unusual
+                    transactions.
+                </p>
+
+                <br>
+
+                <p>
+                    I am particularly interested in sales analysis, inventory
+                    analysis, profitability, dashboards and Excel-based business
+                    solutions.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- ================= SERVICES ================= -->
+
+<section id="services">
+    <div class="container">
+
+        <div class="section-title">
+            <h2>What I <span class="accent">Do</span></h2>
+            <p>Practical data solutions for business problems.</p>
+        </div>
+
+        <div class="cards">
+
+            <div class="card">
+                <h3>Sales Analysis</h3>
+                <p>
+                    Analyze sales performance, products, outlets, quantities,
+                    trends and other sales indicators.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Inventory Analysis</h3>
+                <p>
+                    Monitor stock levels, stock movement, low-stock items,
+                    purchases, sales and inventory value.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Profitability Analysis</h3>
+                <p>
+                    Understand revenue, costs, expenses and profit to identify
+                    areas that require attention.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Excel Business Solutions</h3>
+                <p>
+                    Build practical Excel systems, reports, trackers and
+                    dashboards for business operations.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Power BI Dashboards</h3>
+                <p>
+                    Turn business data into interactive dashboards and visuals
+                    that make important information easier to understand.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Data Cleaning & Reporting</h3>
+                <p>
+                    Organize, clean and prepare data for analysis and create
+                    clear reports for decision-making.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- ================= PROJECTS ================= -->
+
+<section id="projects">
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Featured <span class="accent">Projects</span></h2>
+            <p>Practical projects built to solve real business problems.</p>
+        </div>
+
+
+        <!-- PROJECT 1 -->
+
+        <div class="project-card">
+
+            <h3>Sales & Inventory Management System (SIMS)</h3>
+
+            <div class="project-tools">
+                Excel • Sales Management • Inventory • Dashboard
+            </div>
+
+            <p>
+                An Excel-based Sales & Inventory Management System designed
+                for small businesses such as shops, supermarkets and other
+                businesses that need a simple way to manage their daily
+                operations.
+            </p>
+
+            <ul class="project-list">
+                <li>Daily sales recording</li>
+                <li>Inventory and stock monitoring</li>
+                <li>Purchases and stock movement</li>
+                <li>Damaged and expired stock tracking</li>
+                <li>Customer and supplier returns</li>
+                <li>Expenses tracking</li>
+                <li>Profit and sales analysis</li>
+                <li>Low-stock monitoring</li>
+                <li>Business dashboard</li>
+            </ul>
+
+            <br>
+
+            <a href="https://github.com/tundesulaimon50-wq"
+               target="_blank"
+               class="btn btn-outline">
+                View on GitHub
+            </a>
+
+        </div>
+
+
+        <!-- PROJECT 2 -->
+
+        <div class="project-card">
+
+            <h3>Power BI Sales Performance Dashboard</h3>
+
+            <div class="project-tools">
+                Power BI • Power Query • Data Visualization
+            </div>
+
+            <p>
+                An interactive sales dashboard created to transform sales
+                data into clear visual insights for understanding business
+                performance.
+            </p>
+
+            <ul class="project-list">
+                <li>Total sales analysis</li>
+                <li>Total quantity sold</li>
+                <li>Product performance</li>
+                <li>Salesperson performance</li>
+                <li>Sales trends</li>
+                <li>Outlet performance</li>
+                <li>Interactive slicers</li>
+            </ul>
+
+            <br>
+
+            <a href="https://github.com/tundesulaimon50-wq"
+               target="_blank"
+               class="btn btn-outline">
+                View on GitHub
+            </a>
+
+        </div>
+
+
+        <!-- PROJECT 3 -->
+
+        <div class="project-card">
+
+            <h3>Excel Business Analysis & Reporting</h3>
+
+            <div class="project-tools">
+                Microsoft Excel • Reporting • Business Analysis
+            </div>
+
+            <p>
+                Practical Excel analysis and reporting work focused on turning
+                business records into useful summaries, calculations,
+                comparisons and management reports.
+            </p>
+
+            <ul class="project-list">
+                <li>Sales reporting</li>
+                <li>Inventory analysis</li>
+                <li>Expense analysis</li>
+                <li>Profit calculations</li>
+                <li>Data reconciliation</li>
+                <li>Management reporting</li>
+            </ul>
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- ================= SKILLS ================= -->
+
+<section id="skills">
+    <div class="container">
+
+        <div class="section-title">
+            <h2>My <span class="accent">Skills</span></h2>
+            <p>Tools and capabilities I use to work with business data.</p>
+        </div>
+
+
+        <div class="skill-grid">
+
+            <div class="skill-card">
+                <h3>Microsoft Excel</h3>
+                <p>Advanced</p>
+            </div>
+
+            <div class="skill-card">
+                <h3>Power BI</h3>
+                <p>Intermediate</p>
+            </div>
+
+            <div class="skill-card">
+                <h3>Data Analysis</h3>
+                <p>Strong</p>
+            </div>
+
+            <div class="skill-card">
+                <h3>Data Visualization</h3>
+                <p>Strong</p>
+            </div>
+
+        </div>
+
+
+        <div class="skill-tags">
+
+            <span class="skill-tag">Microsoft Excel</span>
+            <span class="skill-tag">Power BI</span>
+            <span class="skill-tag">Power Query</span>
+            <span class="skill-tag">Excel Formulas</span>
+            <span class="skill-tag">Data Cleaning</span>
+            <span class="skill-tag">Data Visualization</span>
+            <span class="skill-tag">Business Reporting</span>
+            <span class="skill-tag">Inventory Analysis</span>
+            <span class="skill-tag">Sales Analysis</span>
+            <span class="skill-tag">Profit Analysis</span>
+            <span class="skill-tag">Dashboard Development</span>
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- ================= EDUCATION ================= -->
+
+<section id="education">
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Education</h2>
+            <p>My academic background.</p>
+        </div>
+
+
+        <div class="timeline-card">
+
+            <h3>Tai Solarin Federal University of Education</h3>
+
+            <div class="date">
+                2017 – 2021
+            </div>
+
+            <p>
+                Bachelor of Education (B.Ed) —
+                Adult & Development Education
+            </p>
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- ================= CERTIFICATES ================= -->
+
+<section id="certificates">
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Certificates & <span class="accent">Training</span></h2>
+            <p>Professional learning and certifications.</p>
+        </div>
+
+
+        <div class="cards">
+
+            <div class="certificate-card">
+
+                <h3>Essential MS Excel Formulas & Functions</h3>
+
+                <p>
+                    Training focused on practical Microsoft Excel formulas
+                    and functions for data analysis and business reporting.
+                </p>
+
+            </div>
+
+
+            <div class="certificate-card">
+
+                <h3>Basic Financial Education</h3>
+
+                <p>
+                    Kudimata
+                </p>
+
+            </div>
+
+
+            <div class="certificate-card">
+
+                <h3>Basic Human Resource & Management</h3>
+
+                <p>
+                    Cambridge International
+                </p>
+
+            </div>
+
+
+            <div class="certificate-card">
+
+                <h3>More Certifications Coming</h3>
+
+                <p>
+                    This section will be updated as I complete additional
+                    professional certifications and training.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- ================= EXPERIENCE ================= -->
+
+<section id="experience">
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Professional <span class="accent">Experience</span></h2>
+            <p>Experience combining data analysis, auditing and business operations.</p>
+        </div>
+
+
+        <div class="experience-card">
+
+            <h3>Tantalizers PLC</h3>
+
+            <h4>Data Analyst / Internal Auditor</h4>
+
+            <p>
+                2023 – Present
+            </p>
+
+            <br>
+
+            <ul>
+
+                <li>
+                    Work with sales, inventory and operational business records
+                    to support reporting and decision-making.
+                </li>
+
+                <li>
+                    Perform cash and stock reconciliation and investigate
+                    discrepancies or unusual transactions.
+                </li>
+
+                <li>
+                    Prepare and maintain Excel-based reports and business
+                    documentation.
+                </li>
+
+                <li>
+                    Work with sales and stock information within Microsoft
+                    Dynamics/Navision.
+                </li>
+
+                <li>
+                    Support stock monitoring, replenishment and inventory
+                    reporting.
+                </li>
+
+                <li>
+                    Review financial and operational records for accuracy,
+                    completeness and compliance.
+                </li>
+
+                <li>
+                    Use data and reporting to identify exceptions and support
+                    better business decisions.
+                </li>
+
+            </ul>
+
+        </div>
+
+
+        <br>
+
+
+        <div class="experience-card">
+
+            <h3>Previous Professional Experience</h3>
+
+            <h4>Customer Service & Education</h4>
+
+            <p>
+                Earlier professional experience developed my communication,
+                customer service, teaching and problem-solving skills.
+            </p>
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- ================= BUSINESS VALUE ================= -->
+
+<section id="business-value">
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Questions Your <span class="accent">Data Can Answer</span></h2>
+            <p>
+                Good analysis should help a business understand what is
+                happening and what needs to change.
+            </p>
+        </div>
+
+
+        <div class="questions">
+
+            <div class="question">
+                Which products are selling the most?
+            </div>
+
+            <div class="question">
+                Which products are underperforming?
+            </div>
+
+            <div class="question">
+                How much are we selling?
+            </div>
+
+            <div class="question">
+                How much profit are we making?
+            </div>
+
+            <div class="question">
+                Which products are running low?
+            </div>
+
+            <div class="question">
+                How are sales changing over time?
+            </div>
+
+            <div class="question">
+                Which outlet or category performs best?
+            </div>
+
+            <div class="question">
+                Where can the business improve?
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- ================= CTA ================= -->
+
+<section class="cta">
 
     <div class="container">
 
-      <div class="section-title">
-        <span>About Me</span>
-        <h2>Turning Business Data Into Useful Information</h2>
+        <h2>Have Data That Needs Insight?</h2>
+
         <p>
-          I enjoy understanding what business data is saying and turning it
-          into information people can actually use.
+            Let's turn your business data into information you can
+            understand and use.
         </p>
-      </div>
+
+        <a href="#contact" class="btn btn-primary">
+            Let's Work Together
+        </a>
+
+    </div>
+
+</section>
 
 
-      <div class="about-grid">
+<!-- ================= CONTACT ================= -->
 
-        <div class="about-text">
+<section id="contact">
 
-          <p>
-            I've been working with data for a while, developing practical
-            experience in analysing business information, preparing reports,
-            reconciling records and creating useful Excel and Power BI
-            solutions.
-          </p>
+    <div class="container">
 
-          <p>
-            My interest in Data Analytics comes from seeing how properly
-            organised data can help a business move from simply having
-            information to actually understanding what is happening within
-            the business.
-          </p>
+        <div class="section-title">
 
-          <p>
-            I am interested in working with different types of businesses
-            where data can be used to improve performance, understand
-            customers, manage resources and drive better results.
-          </p>
+            <h2>Get In <span class="accent">Touch</span></h2>
 
-          <p>
-            My background in internal auditing has also strengthened my
-            attention to detail, accuracy, reconciliation and understanding
-            of business processes.
-          </p>
+            <p>
+                Let's discuss your data, business or next project.
+            </p>
 
         </div>
 
 
-        <div class="about-list">
+        <div class="contact-grid">
 
-          <h3>What I Bring</h3>
 
-          <
+            <!-- CONTACT INFORMATION -->
+
+            <div class="contact-info">
+
+                <div class="contact-item">
+
+                    <strong>Email</strong>
+
+                    <a href="mailto:tundesulaimon50@gmail.com">
+                        tundesulaimon50@gmail.com
+                    </a>
+
+                </div>
+
+
+                <div class="contact-item">
+
+                    <strong>WhatsApp</strong>
+
+                    <a href="https://wa.me/2349120475646"
+                       target="_blank">
+                        +234 912 047 5646
+                    </a>
+
+                </div>
+
+
+                <div class="contact-item">
+
+                    <strong>Location</strong>
+
+                    <span>
+                        Lagos, Nigeria / Remote
+                    </span>
+
+                </div>
+
+
+                <div class="contact-item">
+
+                    <strong>Availability</strong>
+
+                    <span>
+                        Open to opportunities, freelance projects,
+                        remote roles and business data projects.
+                    </span>
+
+                </div>
+
+
+                <div class="contact-item">
+
+                    <strong>Response Time</strong>
+
+                    <span>
+                        Within 24 hours
+                    </span>
+
+                </div>
+
+
+                <div class="contact-item">
+
+                    <strong>GitHub</strong>
+
+                    <a href="https://github.com/tundesulaimon50-wq"
+                       target="_blank">
+                        github.com/tundesulaimon50-wq
+                    </a>
+
+                </div>
+
+
+                <div class="contact-item">
+
+                    <strong>LinkedIn</strong>
+
+                    <a href="https://www.linkedin.com/in/tunde-sulaimon-3b8236315"
+                       target="_blank">
+                        LinkedIn Profile
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- CONTACT FORM -->
+
+            <div class="contact-form">
+
+                <form action="#" method="POST">
+
+                    <div class="form-group">
+
+                        <label for="name">
+                            Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            placeholder="Your name"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="email">
+                            Email
+                        </label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="Your email"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="subject">
+                            Subject
+                        </label>
+
+                        <input
+                            type="text"
+                            id="subject"
+                            name="subject"
+                            placeholder="What would you like to discuss?"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="message">
+                            Message
+                        </label>
+
+                        <textarea
+                            id="message"
+                            name="message"
+                            placeholder="Write your message..."
+                            required
+                        ></textarea>
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        class="btn btn-primary">
+                        Send Message
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="container">
+
+        <p>
+            © 2026 Sulaimon Tunde Olamilekan.
+            All Rights Reserved.
+        </p>
+
+        <p>
+            Data Analyst | Excel | Power BI | Business Intelligence
+        </p>
+
+    </div>
+
+</footer>
+
+
+</body>
+</html>
